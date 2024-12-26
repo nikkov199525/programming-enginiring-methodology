@@ -1,0 +1,13 @@
+@startuml
+actor пользователь as user
+participant веб-приложение as webapp
+user -> webapp: Регистрация
+webapp --> user: Успешная регистрация
+user -> webapp: Поиск игр
+webapp -> database: Отправка поискового запроса к базе
+dabase --> webapp: Список найденных игр
+webapp --> user: Показывает список игр
+user -> webapp: Добавить игру
+webapp -> database: Сохранить игру
+webapp --> user: Игра добавлена
+@enduml

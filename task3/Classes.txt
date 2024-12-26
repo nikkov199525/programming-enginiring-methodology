@@ -1,0 +1,33 @@
+@startuml
+class User {
+  {field} email: e-mail
+  {field} user_name: имя пользователя
+  {field} password: пароль
+{method} + register(): Зарегистрироваться
+   +{method} + login(): Войти в систему
+}
+
+class Game {
+  {field} title: Название игры
+  {field} genre: жанр
+  {field} releaseDate: дата выхода
+{field} developer: разработчик
+  {field}{field} link: ссылка на игру в магазине steam или gog
+  {field} accessibilityInfo: вся информация о доступности
+  {method} addGame(): добавление игры в каталог
+}
+
+class Review {
+  {field} comments: комментарии пользователей
+  {field} date: дата публикации
+}
+
+class Admin {
+{method} manageUsers()
+{method} manageGames()
+}
+
+User --> Game
+User --> Review
+Game --> Review
+@enduml
